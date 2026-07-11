@@ -168,7 +168,6 @@ Result: VERIFIED ✓  or  TAMPERED ✗
 
 ## Screenshots
 
-> _(Add screenshots here after deployment)_
 
 - Login Page
 - Dashboard
