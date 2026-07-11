@@ -1,0 +1,334 @@
+/* ============================================================
+   Blockchain Transcript Verification System — Custom Styles
+   ============================================================ */
+
+/* ── CSS Variables ───────────────────────────────────────── */
+:root {
+    --sidebar-width: 260px;
+    --sidebar-collapsed-width: 0px;
+    --navbar-height: 60px;
+    --footer-height: 48px;
+    --transition: all 0.25s ease;
+}
+
+/* ── Base ────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: #f4f6fb;
+    overflow-x: hidden;
+}
+
+body.auth-bg {
+    background: linear-gradient(135deg, #1a237e 0%, #0d47a1 50%, #01579b 100%);
+    min-height: 100vh;
+}
+
+/* ── Sidebar ─────────────────────────────────────────────── */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: var(--sidebar-width);
+    z-index: 1050;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar::-webkit-scrollbar {
+    width: 4px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.15);
+    border-radius: 4px;
+}
+
+.sidebar .nav-link {
+    color: rgba(255, 255, 255, 0.7);
+    border-radius: 8px;
+    padding: 0.55rem 0.85rem;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.sidebar .nav-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.sidebar .nav-link.active {
+    background: rgba(13, 110, 253, 0.85);
+    color: #fff;
+    font-weight: 600;
+}
+
+.sidebar-section-title {
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+}
+
+/* ── Main Content ────────────────────────────────────────── */
+.main-content {
+    margin-left: var(--sidebar-width);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition);
+}
+
+/* ── Top Navbar ──────────────────────────────────────────── */
+.top-navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1040;
+    height: var(--navbar-height);
+}
+
+/* ── Footer ──────────────────────────────────────────────── */
+.footer {
+    height: var(--footer-height);
+    margin-top: auto;
+}
+
+/* ── Cards ───────────────────────────────────────────────── */
+.card {
+    transition: box-shadow 0.2s ease;
+}
+
+.card:hover {
+    box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.075) !important;
+}
+
+.icon-box {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+/* ── Tables ──────────────────────────────────────────────── */
+.table th {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-weight: 600;
+    color: #6c757d;
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(13, 110, 253, 0.04);
+}
+
+/* ── Forms ───────────────────────────────────────────────── */
+.form-control:focus,
+.form-select:focus {
+    border-color: #86b7fe;
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.15);
+}
+
+.input-group-text {
+    border-color: #dee2e6;
+}
+
+/* ── Buttons ─────────────────────────────────────────────── */
+.btn {
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #0d6efd, #0a58ca);
+    border: none;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #0a58ca, #084298);
+}
+
+/* ── Badges ──────────────────────────────────────────────── */
+.badge {
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}
+
+/* ── Hash / Monospace ────────────────────────────────────── */
+.font-monospace {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.82rem;
+}
+
+/* ── Blockchain Block Visual ─────────────────────────────── */
+.block-card {
+    border-left: 4px solid #ffc107;
+    transition: var(--transition);
+}
+
+.block-card:hover {
+    transform: translateY(-2px);
+}
+
+/* ── Verification Badge ──────────────────────────────────── */
+.verify-badge-valid {
+    background: linear-gradient(135deg, #198754, #0f5132);
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+}
+
+.verify-badge-invalid {
+    background: linear-gradient(135deg, #dc3545, #842029);
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+}
+
+/* ── Pagination ──────────────────────────────────────────── */
+.page-link {
+    border-radius: 6px !important;
+    margin: 0 2px;
+    font-size: 0.875rem;
+}
+
+.page-item.active .page-link {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+/* ── Alerts ──────────────────────────────────────────────── */
+.alert {
+    border-radius: 12px;
+}
+
+/* ── Dark Mode ───────────────────────────────────────────── */
+[data-bs-theme="dark"] body {
+    background-color: #121212;
+}
+
+[data-bs-theme="dark"] .main-content {
+    background-color: #121212;
+}
+
+[data-bs-theme="dark"] .top-navbar,
+[data-bs-theme="dark"] .footer {
+    background-color: #1e1e1e !important;
+    border-color: #333 !important;
+}
+
+[data-bs-theme="dark"] .card {
+    background-color: #1e1e1e;
+    border-color: #2a2a2a;
+}
+
+[data-bs-theme="dark"] .table {
+    color: #adb5bd;
+}
+
+[data-bs-theme="dark"] .table-light th {
+    background-color: #2a2a2a;
+    color: #adb5bd;
+}
+
+[data-bs-theme="dark"] .table-hover tbody tr:hover {
+    background-color: rgba(255,255,255,0.04);
+}
+
+[data-bs-theme="dark"] .form-control,
+[data-bs-theme="dark"] .form-select,
+[data-bs-theme="dark"] .input-group-text {
+    background-color: #2a2a2a;
+    border-color: #444;
+    color: #e0e0e0;
+}
+
+[data-bs-theme="dark"] .bg-light {
+    background-color: #2a2a2a !important;
+}
+
+/* ── Sidebar Collapse (Mobile) ───────────────────────────── */
+@media (max-width: 991.98px) {
+    .sidebar {
+        transform: translateX(-100%);
+        width: var(--sidebar-width);
+    }
+
+    .sidebar.show {
+        transform: translateX(0);
+    }
+
+    .main-content {
+        margin-left: 0 !important;
+    }
+
+    .sidebar-backdrop {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.5);
+        z-index: 1045;
+    }
+}
+
+/* ── Sidebar Toggle ──────────────────────────────────────── */
+@media (min-width: 992px) {
+    .main-content.sidebar-collapsed {
+        margin-left: 0;
+    }
+
+    .sidebar.collapsed {
+        width: 0;
+        overflow: hidden;
+    }
+}
+
+/* ── Scrollbar Styling ───────────────────────────────────── */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* ── Utility ─────────────────────────────────────────────── */
+.rounded-4 {
+    border-radius: 0.75rem !important;
+}
+
+.rounded-top-4 {
+    border-top-left-radius: 0.75rem !important;
+    border-top-right-radius: 0.75rem !important;
+}
+
+.text-break {
+    word-break: break-all;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
